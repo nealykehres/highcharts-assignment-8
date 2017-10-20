@@ -9,14 +9,43 @@
   <link rel="stylesheet" href="styles/main.css">
 
   <!-- add the Highcharts script elements here -->
-
 </head>
 <body>
 
   <h1>My first chart with Highcharts</h1>
 
   <!-- add the div and the code BELOW this comment -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
 
+<script src="https://code.highcharts.com/themes/skies.js"></script>
+
+<div id="container" style="width:100%; height:400px;"></div>
+
+<script>
+Highcharts.chart('container', {
+  chart: {
+              type: 'bar'
+          },
+          title: {
+              text: 'Fruit Consumption'
+          },
+          xAxis: {
+              categories: ['Apples', 'Bananas', 'Oranges', "Grapes"]
+          },
+          yAxis: {
+              title: {
+                  text: 'Fruit eaten'
+              }
+          },
+          series: [{
+              name: 'Nealy',
+              data: [1, 0, 4, 6]
+          }, {
+              name: 'Brady',
+              data: [5, 7, 3, 6]
+          }]
+  });
+</script>
 
   <!-- don't write anything below these required tags -->
 </body>

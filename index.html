@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles/normalize.css">
+<link rel="stylesheet" href="styles/highcharts.css">
+<title>United States Effect on the Environment</title>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+<script src="https://code.highcharts.com/themes/grid.js"></script>
+</head>
+<body>
+<div id="wrapper">
+
+<h1>
+  United States' Effect on the Environment
+</h1>
+
+<h3>
+  By Nealy Kehres
+</h3>
+
+<div id="narrative">
+<p> These two charts compare the U.S.'s effect on the environment compared to other countries based on two variables: municipal waste production and C02 emissions.</p>
+
+ <p> The first chart compares the U.S. to three other countries that are within the top 10 most populous. The U.S. produces more waste than all of the other countries — even China, which is the most populous country.</p>
+
+  <p>The second chart compares the U.S. to three other countries that are within the top 10 most developed countries based on the UN's Human Development index. Again, the U.S. emits more CO2 than any other country — even Germany and Canada, which were both ranked as more developed than the US. The good news is that the chart demonstrates that all countries have decreased their CO2 emissions. </p>
+</div>
+
+<div id="container"></div>
+
+<p>Source: <a href="http://data.un.org/Data.aspx?d=ENV&f=variableID%3a1814" target="-blank">United Nations Data</a></p>
+
+<div id="container2"></div>
+
+<p>Source: <a href="http://data.un.org/Data.aspx?d=MDG&f=seriesRowID%3a751" target="-blank">United Nations Data</a></p>
+
+  <script>
+  Highcharts.chart('container', {
+  chart: {
+    type: 'column'
+  },
+  title: {
+    text: 'Total amount of municipal waste collected'
+  },
+  subtitle: {
+    text: 'Source:<a href=" http://data.un.org/Data.aspx?d=ENV&f=variableID%3a1814"> United Nations </a>'
+  },
+  xAxis: {
+    categories: [
+      'Brazil',
+      'China',
+      'Japan',
+      'United States',
+    ],
+    crosshair: true
+  },
+  yAxis: {
+    min: 0,
+    title: {
+      text: '1000 Tons of Waste'
+    }
+  },
+  tooltip: {
+    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+      '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+    footerFormat: '</table>',
+    shared: true,
+    useHTML: true
+  },
+  plotOptions: {
+    column: {
+      pointPadding: 0.2,
+      borderWidth: 0
+    }
+  },
+  series: [{
+    name: '2009',
+    data: [53000, 157340, 46252, 221861]
+
+  }, {
+    name: '2010',
+    data: [53000, 158048, 45359, 227177]
+
+  }, {
+    name: '2011',
+    data: [55300, 163953, 45430, 227141]
+
+  }, {
+    name: '2012',
+    data: [57900, 170809, 45234, 227604]
+
+  }]
+});
+</script>
+
+
+
+<script>
+Highcharts.chart('container2', {
+
+  title: {
+    text: 'Carbon dioxide emissions'
+  },
+
+  subtitle: {
+    text: 'Source: <a href="http://data.un.org/Data.aspx?d=MDG&f=seriesRowID%3a751"> United Nations</a>'
+  },
+
+  yAxis: {
+    title: {
+      text: 'Metric Tons of CO2 per Capita'
+    }
+  },
+  legend: {
+    layout: 'vertical',
+    align: 'right',
+    verticalAlign: 'middle'
+  },
+
+  plotOptions: {
+    series: {
+      label: {
+        connectorAllowed: false
+      },
+      pointStart: 2008
+    }
+  },
+
+  series: [{
+    name: 'Canada',
+    data: [16.30528787, 15.03364249, 14.53734027, 14.07653032]
+  }, {
+    name: 'Germany',
+    data: [9.380632032, 8.668431904, 9.042648925, 8.800005064]
+  }, {
+    name: 'New Zealand',
+    data: [8.009963802, 7.476608633, 7.268291555, 7.075755286]
+  }, {
+    name: 'United States',
+    data: [18.3346919, 17.04126196, 17.04126196, 16.84779809]
+  }],
+
+  responsive: {
+    rules: [{
+      condition: {
+        maxWidth: 500
+      },
+      chartOptions: {
+        legend: {
+          layout: 'horizontal',
+          align: 'center',
+          verticalAlign: 'bottom'
+        }
+      }
+    }]
+  }
+
+});
+</script>
+</div> <!-- this is the end of the wrapper -->
+</body>
+</html>
